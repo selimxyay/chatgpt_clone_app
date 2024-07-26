@@ -1,6 +1,7 @@
 import 'package:chatgpt_clone_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import '../components/chat_content.dart';
 import '../services/assets_manager.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,7 +32,10 @@ class _HomePageState extends State<HomePage> {
         Flexible(
           child: ListView.builder(
             itemCount: 6,
-            itemBuilder: (context, index) => const Text(""),
+            itemBuilder: (context, index) => ChatContent(
+              msg: chatMessages[index]["msg"].toString(),
+              chatIndex: int.tryParse(chatMessages[index]["chatIndex"].toString()) ?? 0,
+            ),
           ),
         ),
         /* The spread operator in Dart is used to expand an iterable (like a list) into individual elements. */
