@@ -1,6 +1,12 @@
-import 'package:flutter/material.dart';
 
-final theme = ThemeData();
+import 'package:flutter/material.dart';
+import 'constants/constants.dart';
+import 'pages/home_page.dart';
+
+final theme = ThemeData(
+  scaffoldBackgroundColor: scaffoldBackgroundColor,
+  appBarTheme: AppBarTheme(color: cardColor),
+);
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: theme,
+      home: const HomePage(),
+    );
   }
 }
