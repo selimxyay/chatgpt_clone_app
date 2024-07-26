@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'constants/constants.dart';
 import 'pages/home_page.dart';
 
 final theme = ThemeData(
   scaffoldBackgroundColor: scaffoldBackgroundColor,
   appBarTheme: AppBarTheme(color: cardColor),
+  textTheme: GoogleFonts.poppinsTextTheme(),
 );
 
 void main() {
